@@ -166,7 +166,10 @@ class ListCard extends HTMLElement {
                           card_content += `<img id="image" src="${url}" width="${image_width}" height="${image_height}">`;
                       } else if (columns[column].type === 'icon') {
                         card_content += `<ha-icon class="column-${columns[column].field}" icon=${feed[entry][columns[column].field]}></ha-icon>`;
-                      }
+                      } else if (columns[column].type === 'sizebytes') {
+                          let newText = feed[entry][columns[column].field] / 1000000;
+                          newText = new Intl.NumberFormat('es-ES', { style: 'decimal', maximumFractionDigits: '3'}).format(newText);
+                          card_content += `${newText}`;                          
                       // else if (columns[column].type === 'button') {
                       //   card_content += `<paper-button raised>${feed[entry][columns[column].button_text]}</paper-button>`;
                       // }

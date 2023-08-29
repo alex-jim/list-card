@@ -173,6 +173,7 @@ class ListCard extends HTMLElement {
                       // else if (columns[column].type === 'button') {
                       //   card_content += `<paper-button raised>${feed[entry][columns[column].button_text]}</paper-button>`;
                       // }
+                      }
                     } else {
                       let newText = feed[entry][columns[column].field];
 
